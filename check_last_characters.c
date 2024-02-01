@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnrcmp.c                                      :+:      :+:    :+:   */
+/*   ft_check_last_characters.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:20:04 by trolland          #+#    #+#             */
-/*   Updated: 2024/01/12 14:19:52 by trolland         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:58:29 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_check_last_characters(char *str, char *last)
+int	check_last_characters(char *str, char *last)
 {
 	unsigned char	u1;
 	unsigned char	u2;
