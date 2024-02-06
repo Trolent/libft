@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_words.c                                   :+:      :+:    :+:   */
+/*   count_words_sep.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:23:10 by trolland          #+#    #+#             */
-/*   Updated: 2024/01/12 17:23:36 by trolland         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:47:33 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_is_charset(char c, char *charset)
+static int	is_charset(char c, char *charset)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static int	ft_is_charset(char c, char *charset)
 	return (1);
 }
 
-int	ft_count_words(char const *str, char *charset)
+int	count_words_sep(char const *str, char *charset)
 {
 	int	i;
 	int	expecting;
@@ -37,12 +37,12 @@ int	ft_count_words(char const *str, char *charset)
 	word_count = 0;
 	while (str[i])
 	{
-		if (ft_is_charset(str[i], charset) && expecting == 1)
+		if (!is_charset(str[i], charset) && expecting == 1)
 		{
 			word_count++;
 			expecting = 0;
 		}
-		if (!ft_is_charset(str[i], charset) && expecting == 0)
+		if (is_charset(str[i], charset) && expecting == 0)
 			expecting = 1;
 		i++;
 	}

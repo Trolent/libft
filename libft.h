@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:53 by trolland          #+#    #+#             */
-/*   Updated: 2024/02/01 18:03:11 by trolland         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:45:37 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ int					ft_isupper(int c);
 char				*ft_ceasar(char *input, int num);
 void				ft_int_xor_swap(int *a, int *b);
 int					check_last_characters(char *str, char *last);
-int					ft_count_words(char const *str, char *charset);
+int					count_words(char const *str, char *charset);
+int					count_words_sep(char const *str, char *charset);
 
 #endif
