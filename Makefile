@@ -48,10 +48,10 @@ so:
 	@$(CC) -fPIC $(CFLAGS) $(SRC) -shared -o libft.so
 
 clean :
-	@rm -rf $(OBJ)
+	rm -rf $(OBJ)
 
 fclean : clean
-	@rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re : fclean all
 
