@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:53 by trolland          #+#    #+#             */
-/*   Updated: 2024/02/02 14:45:37 by trolland         ###   ########.fr       */
+/*   Updated: 2024/02/14 10:06:01 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 # endif
 
 void				ft_swap(void *a, void *b, size_t size);
+int					ft_round(float num);
 char				*get_next_line(int fd);
 int					ft_max(int nb1, int nb2);
 int					ft_min(int nb1, int nb2);

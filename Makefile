@@ -6,7 +6,7 @@
 #    By: trolland <trolland@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 12:40:59 by trolland          #+#    #+#              #
-#    Updated: 2024/02/02 14:45:16 by trolland         ###   ########.fr        #
+#    Updated: 2024/02/14 10:06:11 by trolland         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	\
 	ft_swap.c get_next_line.c ft_max.c ft_min.c ft_split_multi.c ft_free_tab.c \
 	ft_atoll.c ft_islower.c ft_isupper.c ft_ceasar.c ft_int_xor_swap.c \
-	check_last_characters.c count_words.c count_words_sep.c 
+	check_last_characters.c count_words.c count_words_sep.c ft_round.c 
 
 OBJ= $(SRC:.c=.o)
 HEADER= ./
