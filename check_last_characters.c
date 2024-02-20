@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_last_characters.c                         :+:      :+:    :+:   */
+/*   check_last_characters.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:20:04 by trolland          #+#    #+#             */
-/*   Updated: 2024/02/01 17:58:29 by trolland         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:48:56 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	check_last_characters(char *str, char *last)
 {
 	unsigned char	u1;
 	unsigned char	u2;
-	size_t str_len;
-	size_t last_len;
+	size_t			str_len;
+	size_t			last_len;
 
 	str_len = ft_strlen(str);
 	last_len = ft_strlen(last);
@@ -35,5 +35,3 @@ int	check_last_characters(char *str, char *last)
 	}
 	return (1);
 }
-
-

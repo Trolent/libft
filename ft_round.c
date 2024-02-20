@@ -6,16 +6,16 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 10:04:26 by trolland          #+#    #+#             */
-/*   Updated: 2024/02/14 10:05:41 by trolland         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:48:50 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_round(float num)
+int	ft_round(float num)
 {
-    int round; 
+	int	round;
 
-    round = (int)num;
-    if (round - num >= 0.5)
-        round += 1;
-    return(round);
+	round = (int)num;
+	if (round - num >= 0.5)
+		round += 1;
+	return (round);
 }
