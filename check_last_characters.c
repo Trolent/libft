@@ -6,12 +6,11 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:20:04 by trolland          #+#    #+#             */
-/*   Updated: 2024/02/20 14:48:56 by trolland         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:13:30 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	check_last_characters(char *str, char *last)
 {
