@@ -6,11 +6,12 @@
 #    By: trolland <trolland@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 12:40:59 by trolland          #+#    #+#              #
-#    Updated: 2024/02/14 10:06:11 by trolland         ###   ########.fr        #
+#    Updated: 2024/03/30 19:24:56 by trolland         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= libft.a
+# NAME= libft.a
+NAME= libftprintf.a
 CC=cc
 CFLAGS= -Wall -Wextra -Werror 
 
@@ -27,6 +28,8 @@ SRC= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	\
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+	\
+	ft_printf.c putnbr_base.c ft_putchar.c ft_putnbr.c ft_putnbr.c ft_putstr.c \
 	\
 	ft_swap.c get_next_line.c ft_max.c ft_min.c ft_split_multi.c ft_free_tab.c \
 	ft_atoll.c ft_islower.c ft_isupper.c ft_ceasar.c ft_int_xor_swap.c \
@@ -54,5 +57,16 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
+
+norm : 
+	@echo 'Checking header files...'
+	@found_error=0; \
+	norminette -R CheckDefine *.h | grep -E 'Error' || found_error=1; \
+	echo "Checking source files..."; \
+	norminette -R CheckForbiddenSourceHeader *.c | grep -E 'Error' || found_error=1; \
+	if [ $$found_error -eq 0 ]; then \
+	    echo "All good"; \
+	fi
+
 
 .PHONY: all clean fclean re

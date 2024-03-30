@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:53 by trolland          #+#    #+#             */
-/*   Updated: 2024/02/14 10:06:01 by trolland         ###   ########.fr       */
+/*   Updated: 2024/03/30 19:15:54 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,19 @@
 //****************************************************************************//
 
 # include <fcntl.h>
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+//****************************************************************************//
+// ------------------------- SYSTEM'S SPECIFICATION ------------------------- //
+//****************************************************************************//
+
+# if defined(__linux__)
+#  define PTRNULL "(nil)"
+# elif defined(__APPLE__)
+#  define PTRNULL "(0x0)"
+# endif
 
 //****************************************************************************//
 // --------------------------- 42'S LIBFT PROJECT --------------------------- //
@@ -58,9 +69,12 @@ char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 int					ft_putchar_fd(char c, int fd);
+int					ft_putchar(char c);
 int					ft_putstr_fd(char *s, int fd);
+int					ft_putstr(char *s);
 int					ft_putendl_fd(char *s, int fd);
 int					ft_putnbr_fd(int n, int fd);
+int					ft_putnbr(int n);
 
 //****************************************************************************//
 // ------------------------------ LINKED LIST ------------------------------- //
@@ -82,6 +96,16 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+//****************************************************************************//
+// ------------------------------- FT_PRINTF -------------------------------- //
+//****************************************************************************//
+
+int					ft_printf(const char *str, ...);
+int					write_str(char *str);
+int					write_unsigned(unsigned int n);
+int					write_hex(unsigned int n, char c);
+int					ft_putnbr_base(unsigned long long nbr, char *base);
 
 //****************************************************************************//
 // --------------------------- MY OWN FUNCTIONS ----------------------------- //
