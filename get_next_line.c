@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 10:41:21 by trolland          #+#    #+#             */
-/*   Updated: 2024/02/21 16:18:09 by trolland         ###   ########.fr       */
+/*   Updated: 2024/03/31 20:11:46 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,3 +109,6 @@ char	*get_next_line(int fd)
 		ft_clear_temp(temp, ft_strchr_index_n_strlen(temp, 0));
 	return (line);
 }
+
+
+

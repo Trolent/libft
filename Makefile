@@ -6,7 +6,7 @@
 #    By: trolland <trolland@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 12:40:59 by trolland          #+#    #+#              #
-#    Updated: 2024/03/30 19:24:56 by trolland         ###   ########.fr        #
+#    Updated: 2024/03/31 20:06:50 by trolland         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,15 +58,21 @@ fclean : clean
 
 re : fclean all
 
-norm : 
+norm:
 	@echo 'Checking header files...'
-	@found_error=0; \
-	norminette -R CheckDefine *.h | grep -E 'Error' || found_error=1; \
-	echo "Checking source files..."; \
-	norminette -R CheckForbiddenSourceHeader *.c | grep -E 'Error' || found_error=1; \
-	if [ $$found_error -eq 0 ]; then \
-	    echo "All good"; \
+	@output_header=$$(norminette -R CheckDefine *.h); \
+	echo "$$output_header" | awk '/Error/ {print "\033[0;31m" $$0 "\033[0m"}'; \
+	echo 'Checking source files...'; \
+	output_source=$$(norminette -R CheckForbiddenSourceHeader *.c); \
+	echo "$$output_source" | awk '/Error/ {print "\033[0;31m" $$0 "\033[0m"}'; \
+	total_errors=$$(echo "$$output_header $$output_source" | grep -c 'Error:'); \
+	if [ $$total_errors -gt 0 ]; then \
+	    echo "\033[0;31m$$total_errors errors found\033[0m"; \
+	else \
+	    echo "\033[0;32mAll good\033[0m"; \
 	fi
 
 
-.PHONY: all clean fclean re
+
+
+.PHONY: all clean fclean re norm so
