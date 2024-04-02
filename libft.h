@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:53 by trolland          #+#    #+#             */
-/*   Updated: 2024/03/31 20:09:56 by trolland         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:51:03 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,5 @@ void				ft_int_xor_swap(int *a, int *b);
 int					check_last_characters(char *str, char *last);
 int					count_words(char const *str, char *charset);
 int					count_words_sep(char const *str, char *charset);
-
+int					is_in_string(char c, char *str);
 #endif
