@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:00 by trolland          #+#    #+#             */
-/*   Updated: 2024/01/12 17:28:25 by trolland         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:48:31 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	**ft_split_multi(char const *s, char *c)
 		split[i] = ft_create_sub_tab(s, c, &j);
 		if (!split[i])
 		{
-			ft_free_tab(split, i);
+			ft_free_tab(split);
 			return (NULL);
 		}
 		i++;

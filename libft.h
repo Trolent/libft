@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:53 by trolland          #+#    #+#             */
-/*   Updated: 2024/05/01 16:59:49 by trolland         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:46:42 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ char				*get_next_line(int fd);
 int					ft_max(int nb1, int nb2);
 int					ft_min(int nb1, int nb2);
 char				**ft_split_multi(char const *s, char *c);
-void				ft_free_tab(char **tab, int i);
+void				ft_free_tab(char **tab);
 int					ft_islower(int c);
 int					ft_isupper(int c);
 char				*ft_ceasar(char *input, int num);

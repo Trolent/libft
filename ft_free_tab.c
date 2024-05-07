@@ -6,18 +6,22 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 18:27:28 by trolland          #+#    #+#             */
-/*   Updated: 2023/12/02 18:29:35 by trolland         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:55:52 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_tab(char **tab, int i)
+void	ft_free_tab(char **tab)
 {
-	while (i >= 0)
+	int	i;
+
+	i = 0;
+	(void)i;
+	while (tab[i])
 	{
 		free(tab[i]);
-		i--;
+		i++;
 	}
 	free(tab);
 }
