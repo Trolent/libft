@@ -6,7 +6,7 @@
 #    By: trolland <trolland@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 12:40:59 by trolland          #+#    #+#              #
-#    Updated: 2024/05/01 17:00:02 by trolland         ###   ########.fr        #
+#    Updated: 2024/05/08 23:13:59 by trolland         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,10 +51,12 @@ so:
 	@$(CC) -fPIC $(CFLAGS) $(SRC) -shared -o libft.so
 
 clean :
-	rm -rf $(OBJ)
+	@echo "Cleaning libft's object files..."
+	@rm -rf $(OBJ)
 
 fclean : clean
-	rm -rf $(NAME)
+	@echo "Cleaning libft's library..."
+	@rm -rf $(NAME)
 
 re : fclean all
 
