@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:49:36 by trolland          #+#    #+#             */
-/*   Updated: 2024/04/02 11:50:24 by trolland         ###   ########.fr       */
+/*   Updated: 2024/05/19 18:15:42 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@ int	is_in_string(char c, char *str)
 {
 	int	i;
 
-	i = 0;
-	while (str[i])
-	{
+	i = -1;
+	while (str[++i])
 		if (str[i] == c)
 			return (i);
-		i++;
-	}
 	return (-1);
 }
