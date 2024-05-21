@@ -9,7 +9,7 @@ Grade: 125%.
 
 LIBFT is 42's first project. The goal is to recreate some of the basic functions of the standard C Library (and some others).
 
-This specific repo contains my ongoing libft, to have a look at my original libft work, check this repo.
+This specific repo contains my ongoing libft, to have a look at my original libft work, check this [repo](https://github.com/Trolent/42_Libft.git).
 
 ## Installing and Compiling Libft
 
