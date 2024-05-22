@@ -6,7 +6,7 @@
 #    By: trolland <trolland@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 12:40:59 by trolland          #+#    #+#              #
-#    Updated: 2024/05/19 18:16:49 by trolland         ###   ########.fr        #
+#    Updated: 2024/05/19 20:20:03 by trolland         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,16 @@ SRC= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 OBJ= $(SRC:.c=.o)
 HEADER= ./
 
+ASCII_ART = \
+"\n              .--.           .---.        .-.    \n"\
+"         .---|--|   .-.     | \033[1;32mL\033[0m |  .---. |~|    .--.   \n"\
+"      .--|===|is|---|_|--.__| \033[1;32mI\033[0m |--|:::| |~|-==-|==|---. \n"\
+"      |%%|STR|as|===| |~~|%%| \033[1;32mB\033[0m |--|   |_|~|ATOI|  |___|-. \n"\
+"      |  |   |ci|===| |==|  | \033[1;32mF\033[0m |  |:::|=| |    |FD|---|=| \n"\
+"      |  |   |i.|   |_|__|  | \033[1;32mT\033[0m |__|   | | |    |  |___| | \n"\
+"      |~~|===|--|===|~|~~|%%|~~~|--|:::|=|~|----|==|---|=| \n"\
+"      ^--^---'--^---^-^--^--^---'--^---^-^-^-==-^--^---^-' \n"
+
 
 all : $(NAME)
 
@@ -45,10 +55,9 @@ all : $(NAME)
 	@$(CC) -I $(HEADER) -c $^ $(CFLAGS) -o $@
 
 $(NAME) : $(OBJ)
+	@echo "Creating libft's library..."
+	@echo $(ASCII_ART)
 	@ar rc $(NAME) $(OBJ)
-
-so:
-	@$(CC) -fPIC $(CFLAGS) $(SRC) -shared -o libft.so
 
 clean :
 	@echo "Cleaning libft's object files..."

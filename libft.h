@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:53 by trolland          #+#    #+#             */
-/*   Updated: 2024/05/19 18:14:49 by trolland         ###   ########.fr       */
+/*   Updated: 2024/05/19 20:03:19 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,37 +119,61 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 // ------------------------------ MEMORY UTILS ------------------------------ //
 //****************************************************************************//
 
+/*allocate memory for a string and initialize it with '\0'*/
 void				*ft_calloc(size_t count, size_t size);
-void				*ft_memset(void *b, int c, size_t len);
+/*set a memory block of size len to 0*/
 void				ft_bzero(void *s, size_t n);
+/*returns a pointer to a memory block of size len set to a specific value c*/
+void				*ft_memset(void *b, int c, size_t len);
+/*copies a memory block from src to dest, and returns a pointer to dest.
+undifined behavior if the memory blocks overlap*/
 void				*ft_memcpy(void *dst, const void *src, size_t n);
+/*copies a memory block from src to dest, and returns a pointer to dest.
+the memory blocks can overlap*/
 void				*ft_memmove(void *dst, const void *src, size_t len);
+/*returns a pointer to the first occurence of a byte c in a memory block*/
 void				*ft_memchr(const void *s, int c, size_t n);
+/*compares byte strings s1 and s2. returns 0 if they are identical*/
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+/*frees an array of strings*/
 void				ft_free_tab(char **tab);
 
 //****************************************************************************//
 // ------------------------------ PRINT UTILS ------------------------------- //
 //****************************************************************************//
 
+/*recreate the printf function*/
 int					ft_printf(const char *str, ...);
+/*writes a char to a file descriptor*/
 int					ft_putchar_fd(char c, int fd);
+/*writes a char to the standard output*/
 int					ft_putchar(char c);
+/*writes a string to a file descriptor*/
 int					ft_putstr_fd(char *s, int fd);
+/*writes a string to the standard output*/
 int					ft_putstr(char *s);
+/*writes a string to a file descriptor followed by a newline*/
 int					ft_putendl_fd(char *s, int fd);
+/*writes a number to a file descriptor*/
 int					ft_putnbr_fd(int n, int fd);
+/*writes a number to the standard output*/
 int					ft_putnbr(int n);
+/*writes a number to rhe standard output in a specific base*/
 int					ft_putnbr_base(unsigned long long nbr, char *base);
 
 //****************************************************************************//
 // ------------------------------ MATHS UTILS ------------------------------- //
 //****************************************************************************//
 
+/*swaps two variables*/
 void				ft_swap(void *a, void *b, size_t size);
+/*swaps two integers*/
 void				ft_int_xor_swap(int *a, int *b);
+/*returns the rounded value of a float*/
 int					ft_round(float num);
+/*returns the maximum value between two integers*/
 int					ft_max(int nb1, int nb2);
+/*returns the minimum value between two integers*/
 int					ft_min(int nb1, int nb2);
 
 //****************************************************************************//
