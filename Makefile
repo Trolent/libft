@@ -6,7 +6,7 @@
 #    By: trolland <trolland@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 12:40:59 by trolland          #+#    #+#              #
-#    Updated: 2024/05/19 20:20:03 by trolland         ###   ########.fr        #
+#    Updated: 2024/05/22 18:30:57 by trolland         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,11 +52,13 @@ ASCII_ART = \
 all : $(NAME)
 
 %.o : %.c
+	@printf "\033[0;32m\tCompiling: $<\033[0m\n";
 	@$(CC) -I $(HEADER) -c $^ $(CFLAGS) -o $@
+# @$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	@echo "Creating libft's library..."
 	@echo $(ASCII_ART)
+	@echo "Creating libft's library..."
 	@ar rc $(NAME) $(OBJ)
 
 clean :
