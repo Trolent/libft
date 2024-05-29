@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:00 by trolland          #+#    #+#             */
-/*   Updated: 2024/05/07 18:47:08 by trolland         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:47:20 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	word_count = (ft_count_words_one_char(s, c));
-	split = malloc(sizeof(char *) * (word_count + 1));
+	split = ft_calloc(sizeof(char *), (word_count + 1)); 
 	if (!split)
 		return (NULL);
 	while (i < word_count)
