@@ -6,7 +6,7 @@
 /*   By: trolland <trolland@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:40:53 by trolland          #+#    #+#             */
-/*   Updated: 2024/05/30 12:12:09 by trolland         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:29:14 by trolland         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 // -------------------------- NECESSARY LIBRARIES --------------------------- //
 //****************************************************************************//
 
+# include <fcntl.h>
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
 
 //****************************************************************************//
 // ------------------------- SYSTEM'S SPECIFICATION ------------------------- //
@@ -34,6 +34,17 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+# define MAX_BUFFER 4096
+
+typedef struct s_print
+{
+	char			buffer[MAX_BUFFER + 1];
+	int				wrote;
+	int				j;
+	int				fd;
+	int				err;
+}					t_print;
 
 //****************************************************************************//
 // ------------------------------- CHAR UTILS ------------------------------- //
@@ -81,6 +92,8 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 /*duplicate a string*/
 char				*ft_strdup(const char *s1);
+/*duplicates a string up to n elements*/
+char				*ft_strndup(const char *s1, int len);
 /*join two strings*/
 char				*ft_strjoin(char const *s1, char const *s2);
 /*split a string in an array of strings separated by a single char*/
@@ -95,6 +108,8 @@ char				*ft_strtrim(char const *s1, char const *set);
 /*transforms an integer to a string*/
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 /*verify if last characters of a string are equal to another string*/
+int					ft_strcmp(char *s1, char *s2);
+/*compares two strings and returns 0 if they are identical*/
 int					check_last_characters(char *str, char *last);
 /*counts the number of words in a string separated by a single char*/
 int					count_words(char const *str, char charset);
@@ -196,5 +211,17 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+//****************************************************************************//
+// ----------------------------- DPRINTF UTILS ------------------------------ //
+//****************************************************************************//
+
+int					print_buffer(int fd, char *buffer, int *j, int *err);
+int					string_tobuffer(char *str, t_print *data);
+int					char_tobuffer(int c, t_print *data);
+int					int_tobuffer(int n, t_print *data);
+int					ft_ddraft(char flag, t_print *data, va_list *arg);
+int					ft_dprintf(int fd, const char *str, ...);
+void				ft_free_array(char **strs, int len);
 
 #endif
